@@ -817,7 +817,7 @@ sub svg2png {
 			$cmd .= " && convert ".$out." -unsharp 0x1 ".$out;
 		}
 		$cmd .= " && pngcrush -rem allb -brute -reduce ".$out." ".$out.".crushed && mv ".$out.".crushed ".$out;
-		$cmd .= " && optipng -o5 ".$out;
+		$cmd .= " && optipng -fix -o5 ".$out;
 		return $cmd;
     } else {
         return undef;
